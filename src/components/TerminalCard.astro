@@ -1,0 +1,39 @@
+---
+const {
+  name = "José Hernández",
+  alias = "José Hernández",
+  role = "Systems Engineer | Cybersecurity (Pentesting) & Ethical Hacking | Infrastructure & Networks | Dev. Full-Stack",
+  location = "MX / LATAM",
+  summary = "Investigo vulnerabilidades, automatizo defensas y construyo herramientas minimalistas. Soy linuxero de corazón y me inspiro en lo undernet.",
+} = Astro.props;
+
+// Texto para glitch: normalizado para diacríticos y ligado al attr data-text
+const titleText = `${alias}@wired`;
+const glitchText = titleText.normalize('NFC');
+---
+<section id="identity" class="section">
+  <div class="panel overflow-hidden">
+    <div class="panel-chrome">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="ml-2 text-[var(--muted)] text-xs">/usr/bin/identity</span>
+    </div>
+    <div class="p-5 md:p-7">
+      <h1 class="glitch whitespace-nowrap text-3xl md:text-5xl font-semibold mb-3" data-text={glitchText}>
+        {alias}<span class="text-[var(--accent-rose)]">@</span>wired
+      </h1>
+      <p class="text-[var(--muted)] mb-5">{role}</p>
+      <div class="font-mono text-sm leading-relaxed">
+        <div><span class="text-[var(--accent-phosphor)]">$</span> whoami</div>
+        <div class="mb-3">{name.toLowerCase().replace(/\s+/g, "_")}</div>
+
+        <div><span class="text-[var(--accent-phosphor)]">$</span> uname -srv</div>
+        <div class="mb-3">linux wired 5.x • hardening • netsec</div>
+
+        <div><span class="text-[var(--accent-phosphor)]">$</span> echo "{summary}"</div>
+        <div class="mt-1">{summary}</div>
+      </div>
+    </div>
+  </div>
+</section>
