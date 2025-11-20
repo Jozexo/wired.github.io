@@ -3,12 +3,17 @@ import { projects } from "../data/projects";
 import ProjectNode from "./ProjectNode.astro";
 ---
 <section id="projects" class="section">
-  <div class="mb-5">
-    <h2 class="text-2xl md:text-3xl font-semibold glitch" data-text="mesh">mesh</h2>
+  <div class="mb-4">
+    <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-[var(--muted)]">
+      <span class="text-[var(--accent-phosphor)]">/</span><span class="text-[var(--accent-pink)]">mesh</span>
+    </h2>
     <p class="text-[var(--muted)] mt-1">nodos enlazados a herramientas y experimentos</p>
   </div>
 
-  <div class="mesh">
+  <div class="mesh mesh--stack">
     {projects.map(p => (<ProjectNode project={p} />))}
   </div>
+  <style>
+    .mesh--stack { grid-template-columns: 1fr; gap: 18px; }
+  </style>
 </section>
