@@ -44,19 +44,5 @@ const email = 'jozehernandez@proton.me';
   <div class="border-t border-(--grid) text-[10px] py-2 text-center text-(--muted)">
     <span class="text-(--accent-phosphor)">$</span> uptime: <span id="wired-uptime">0s</span>
   </div>
-  <script>
-    // Simple uptime counter
-    document.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('wired-uptime');
-      if (!el) return;
-      const start = Date.now();
-      setInterval(() => {
-        const diff = Math.floor((Date.now() - start)/1000);
-        const h = Math.floor(diff/3600);
-        const m = Math.floor((diff%3600)/60);
-        const s = diff%60;
-        el.textContent = h ? `${h}h ${m}m ${s}s` : (m ? `${m}m ${s}s` : `${s}s`);
-      }, 1000);
-    });
-  </script>
+  <script type="module" src="/src/scripts/footer-uptime.ts"></script>
 </footer>

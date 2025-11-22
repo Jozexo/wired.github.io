@@ -34,25 +34,6 @@ const groups: Group[] = [
     ))}
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const section = document.getElementById('skills');
-      if (!section) return;
-      const items = section.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        items.forEach(el => el.classList.add('is-visible'));
-        return;
-      }
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      items.forEach(el => io.observe(el));
-    });
-  </script>
+  <script type="module" src="/src/scripts/skills-reveal.ts"></script>
 
 </section>

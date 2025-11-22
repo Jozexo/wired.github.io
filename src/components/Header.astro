@@ -26,21 +26,6 @@ import SocialIcon from './icons/SocialIcon.astro';
 		</div>
 	</div>
 </header>
-<style>
-  header .reveal { opacity:0; transform: translateY(-6px); transition: opacity .45s ease, transform .45s ease; transition-delay: calc(var(--d,0)*70ms); }
-  header .reveal.is-visible { opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce) { header .reveal { opacity:1; transform:none; transition:none; } }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const h = document.querySelector('header');
-    if (!h) return;
-    const items = h.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('is-visible')); return; }
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0 });
-    items.forEach(el => io.observe(el));
-  });
-</script>
+<!-- reveal styles moved to global.css -->
+<script type="module" src="/src/scripts/header-reveal.ts"></script>
 
