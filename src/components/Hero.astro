@@ -31,11 +31,11 @@ import "../styles/components/hero.css";
         </svg>
       </a>
     </div>
-      <figure class="silhouette-hover translate-y-1 reveal-hero" style={`--d:3; --silhouette-mask: url(${import.meta.env.BASE_URL}img/lain-glich.gif);`}>
+      <figure class="silhouette-hover translate-y-1 reveal-hero" style="--d:3; --silhouette-mask: url(img/lain-glich.gif);">
       <img
-        src={`${import.meta.env.BASE_URL}img/lain-glich.gif`}
+        src="img/lain-glich.gif"
         alt="Lain style ambient glitch"
-        fetchpriority="high"
+        loading="lazy"
         class="w-[220px] md:w-60 aspect-square object-cover transition-shadow"
       />
       <figcaption class="absolute -bottom-2 left-2 text-[10px] tracking-wide uppercase text-(--muted) opacity-70 select-none">
