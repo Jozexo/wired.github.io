@@ -16,7 +16,7 @@ export const projects: Project[] = [
     tags: ["astro", "design", "css"],
     href: "/",
     repo: "https://github.com/Jozexo/portfolio-wired",
-    image: "/img/lain-glich.gif",
+    image: "img/lain-glich.gif",
   },
   {
     title: "anomaly-viewer",
@@ -25,6 +25,6 @@ export const projects: Project[] = [
     tags: ["three.js", "webgl", "ux"],
     href: "#", // pendiente de URL final
     repo: "https://github.com/Jozexo/anomaly-viewer",
-    image: "/img/placeholder-anomaly.svg",
+    image: "img/placeholder-anomaly.svg",
   },
 ];

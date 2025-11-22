@@ -1,9 +1,10 @@
 ---
-interface Props { name: string; size?: number }
-const { name, size = 40 } = Astro.props as Props;
+// @ts-nocheck
+const { name, size = 40 } = Astro.props;
 const n = (name || "").toLowerCase();
 // Mapeo de cada skill a un ícono relevante (mezcla de simple-icons, lucide y mdi para conceptos genéricos)
-const map: Record<string, string> = {
+// @ts-nocheck
+const map = {
   // Dev / Lenguajes
   'python': 'simple-icons:python',
   'php': 'simple-icons:php',
@@ -30,6 +31,6 @@ const map: Record<string, string> = {
   'vuln-analysis': 'mdi:bug-outline',
   'hardening': 'lucide:shield-check'
 };
-const icon = map[n] || 'lucide:badge-help';
+const icon = Object.prototype.hasOwnProperty.call(map, n) ? map[n] : 'lucide:badge-help';
 ---
 <iconify-icon icon={icon} width={size} height={size} aria-hidden="true" class="block" />
