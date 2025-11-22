@@ -8,25 +8,25 @@ const {
 } = Astro.props;
 ---
 <section id="identity" class="section -mt-6 md:-mt-25">
-  <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-[var(--muted)] mb-3">
-    <span class="text-[var(--accent-phosphor)]">/</span><span class="text-[var(--accent-pink)]">identity</span>
+  <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-(--muted) mb-3">
+    <span class="hero-name glitch glitch-anim text-(--accent-pink)" data-text="#identidad">#identidad</span>
   </h2>
   <div class="panel overflow-hidden">
     <div class="panel-chrome">
       <span class="dot red"></span>
       <span class="dot yellow"></span>
       <span class="dot green"></span>
-      <span class="ml-2 text-[var(--muted)] text-xs">/usr/bin/identity</span>
+      <span class="ml-2 text-(--muted) text-xs">/usr/bin/identity</span>
     </div>
     <div class="p-5 md:p-7">
       <div class="font-mono text-sm leading-relaxed">
-        <div><span class="text-[var(--accent-phosphor)]">$</span> whoami</div>
+        <div><span class="text-(--accent-phosphor)">$</span> whoami</div>
         <div class="mb-3">{name.toLowerCase().replace(/\s+/g, "_")}</div>
 
-        <div><span class="text-[var(--accent-phosphor)]">$</span> uname -srv</div>
+        <div><span class="text-(--accent-phosphor)">$</span> uname -srv</div>
         <div class="mb-3">linux wired 5.x • hardening • netsec</div>
 
-        <div><span class="text-[var(--accent-phosphor)]">$</span> echo "{summary}"</div>
+        <div><span class="text-(--accent-phosphor)">$</span> echo "{summary}"</div>
         <div class="mt-1">{summary}</div>
       </div>
     </div>

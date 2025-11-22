@@ -1,5 +1,6 @@
 ---
 import SkillIcon from "./icons/SkillIcon.astro";
+import "../styles/components/skills.css";
 
 interface Group { key: string; label: string; items: string[] }
 const groups: Group[] = [
@@ -10,21 +11,20 @@ const groups: Group[] = [
 ];
 ---
 <section id="skills" class="section pt-0">
-  <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-[var(--muted)] mb-1">
-    <span class="text-[var(--accent-phosphor)]">/</span><span class="text-[var(--accent-pink)]">skills</span>
+  <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-(--muted) mb-1">
+    <span class="hero-name glitch glitch-anim text-(--accent-pink)" data-text="#habilidades">#habilidades</span>
   </h2>
-  <p class="text-[var(--muted)] mb-3">capas del stack y tooling esencial</p>
 
   <div class="mesh">
     {groups.map(g => (
       <div class="node" role="listitem" data-group={g.key} data-skillbox>
         <div class="flex items-center justify-between gap-2 mb-2">
-          <h3 class="font-semibold text-[var(--fg)]">{g.label}</h3>
+          <h3 class="font-semibold text-(--fg)">{g.label}</h3>
         </div>
-        <p class="text-sm text-[var(--muted)] mb-3">{/* descripción opcional */}</p>
+        <p class="text-sm text-(--muted) mb-3">{/* descripción opcional */}</p>
         <div class="flex flex-wrap gap-2">
           {g.items.map(item => (
-            <span class="skill-chip text-xs px-2 py-1 rounded border border-[var(--grid)]/80 text-[var(--muted)] inline-flex items-center gap-2">
+            <span class="skill-chip text-xs px-2 py-1 rounded border border-(--grid)/80 text-(--muted) inline-flex items-center gap-2">
               <SkillIcon name={item} size={14} />
               <span class="capitalize">{item}</span>
             </span>
@@ -35,35 +35,3 @@ const groups: Group[] = [
   </div>
 
 </section>
-<style>
-  /* Disable node-level hover/transform for skill boxes to make them static */
-  .mesh [data-skillbox] { transition: none; }
-  .mesh [data-skillbox]:hover { transform: none !important; box-shadow: none !important; border-color: var(--grid) !important; }
-
-  /* Individual skill chip hover effects (move the interactivity from the card to each chip) */
-  .mesh [data-skillbox] .skill-chip {
-    cursor: pointer;
-    transition: transform .16s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; /* center horizontally */
-    text-align: center;
-    gap: .5rem;
-    padding: 6px 10px;
-    width: auto; /* auto-size to content */
-    max-width: 100%;
-    white-space: normal; /* allow wrapping for long names */
-  }
-
-  /* Center the label inside the chip and allow it to wrap into multiple lines */
-  .mesh [data-skillbox] .skill-chip span { display: block; line-height: 1.1; }
-
-  .mesh [data-skillbox] .skill-chip:hover { transform: translateY(-4px); border-color: color-mix(in oklab, var(--accent-pink) 40%, var(--grid)); color: var(--fg); background: rgba(210,115,137,0.06); box-shadow: 0 8px 24px rgba(210,115,137,.12); }
-
-  .mesh [data-skillbox] .skill-chip iconify-icon { transition: color .18s ease, filter .18s ease; color: var(--muted); }
-  .mesh [data-skillbox] .skill-chip:hover iconify-icon { color: var(--accent-pink); filter: drop-shadow(0 0 6px rgba(210,115,137,.25)); }
-
-  @media (hover: none) {
-    .mesh [data-skillbox] .skill-chip:hover { transform: none; box-shadow: none; }
-  }
-</style>

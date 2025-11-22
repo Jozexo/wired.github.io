@@ -1,0 +1,40 @@
+/* Styles específicos para el componente SkillsMini */
+.mesh [data-skillbox] { transition: none; }
+.mesh [data-skillbox]:hover { transform: none !important; box-shadow: none !important; border-color: var(--grid) !important; }
+
+/* Chip de habilidad */
+.mesh [data-skillbox] .skill-chip {
+  cursor: pointer;
+  transition: transform .16s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: .5rem;
+  padding: 6px 10px;
+  width: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+.mesh [data-skillbox] .skill-chip span { display: block; line-height: 1.1; }
+
+.mesh [data-skillbox] .skill-chip:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--accent-pink) 40%, var(--grid));
+  color: var(--fg);
+  background: rgba(210,115,137,0.06);
+  box-shadow: 0 8px 24px rgba(210,115,137,.12);
+}
+
+.mesh [data-skillbox] .skill-chip iconify-icon {
+  transition: color .18s ease, filter .18s ease;
+  color: var(--muted);
+}
+.mesh [data-skillbox] .skill-chip:hover iconify-icon {
+  color: var(--accent-pink);
+  filter: drop-shadow(0 0 6px rgba(210,115,137,.25));
+}
+
+@media (hover: none) {
+  .mesh [data-skillbox] .skill-chip:hover { transform: none; box-shadow: none; }
+}
