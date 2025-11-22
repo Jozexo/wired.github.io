@@ -2,9 +2,8 @@
 const {
   name = "José Hernández",
   alias = "José Hernández",
-  role = "Systems Engineer | Cybersecurity (Pentesting) & Ethical Hacking | Infrastructure & Networks | Dev. Full-Stack",
-  location = "MX / LATAM",
-  summary = "Investigo vulnerabilidades, automatizo defensas y construyo herramientas minimalistas. Soy linuxero de corazón y me inspiro en lo undernet.",
+  location = "Venezuela",
+  summary = "Ing. de Sistemas (3 años en sector hotelero) integrando infraestructura, desarrollo y seguridad para continuidad y protección de datos sensibles. Combino visión de producto con pentesting, hardening Linux/Windows, automatización Bash y arquitectura de redes (MikroTik) para soluciones robustas y medibles. Enfoque: reducir superficie de ataque, optimizar procesos críticos y acelerar despliegues seguros.",
 } = Astro.props;
 ---
 <section id="identity" class="section -mt-6 md:-mt-25">
@@ -21,13 +20,16 @@ const {
     <div class="p-5 md:p-7">
       <div class="font-mono text-sm leading-relaxed">
         <div><span class="text-(--accent-phosphor)">$</span> whoami</div>
-        <div class="mb-3">{name.toLowerCase().replace(/\s+/g, "_")}</div>
+        <div class="mb-3">{name}</div>
 
-        <div><span class="text-(--accent-phosphor)">$</span> uname -srv</div>
-        <div class="mb-3">linux wired 5.x • hardening • netsec</div>
-
-        <div><span class="text-(--accent-phosphor)">$</span> echo "{summary}"</div>
+        <div><span class="text-(--accent-phosphor)">$</span> echo</div>
         <div class="mt-1">{summary}</div>
+
+        <div class="mt-4"><span class="text-(--accent-phosphor)">$</span> location</div>
+        <div class="flex items-center gap-2 mb-0">
+          <span>{location}</span>
+          <span aria-hidden="true">🇻🇪</span>
+        </div>
       </div>
     </div>
   </div>
