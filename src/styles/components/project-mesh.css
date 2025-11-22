@@ -1,4 +1,5 @@
 /* Layout específico del contenedor de proyectos */
+.mesh { display: grid; }
 .mesh--stack { grid-template-columns: 1fr; gap: 18px; }
 
 /* Nueva rejilla 2 columnas (responsive) */

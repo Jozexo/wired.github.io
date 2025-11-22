@@ -15,6 +15,7 @@ export const projects: Project[] = [
     description: "Este portafolio: Astro + estética Lain + terminal.",
     tags: ["astro", "design", "css"],
     href: "/",
+    repo: "https://github.com/Jozexo/portfolio-wired",
     image: "/img/lain-glich.gif",
   },
   {
@@ -23,14 +24,7 @@ export const projects: Project[] = [
     description: "Visualizador experimental de datos con efectos glitch y filtros fractales.",
     tags: ["three.js", "webgl", "ux"],
     href: "#", // pendiente de URL final
-    image: "/img/placeholder-anomaly.jpg",
-  },
-  {
-    title: "anomaly-viewer",
-    slug: "anomaly-viewer",
-    description: "Visualizador experimental de datos con efectos glitch y filtros fractales.",
-    tags: ["three.js", "webgl", "ux"],
-    href: "#", // pendiente de URL final
-    image: "/img/placeholder-anomaly.jpg",
+    repo: "https://github.com/Jozexo/anomaly-viewer",
+    image: "/img/placeholder-anomaly.svg",
   },
 ];

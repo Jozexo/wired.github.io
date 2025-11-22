@@ -64,7 +64,7 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: .5px; }
 		transparent 3px
 	);
 	mix-blend-mode: overlay;
-	opacity: .15;
+	opacity: .12;
 }
 
 /* Noise texture (used by overlay component) */
@@ -77,9 +77,9 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: .5px; }
 		radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.05), transparent 40%),
 		radial-gradient(1px 1px at 80% 60%, rgba(255,255,255,.04), transparent 40%),
 		radial-gradient(2px 2px at 50% 50%, rgba(255,255,255,.03), transparent 45%);
-	filter: contrast(120%);
-	animation: noiseMove 8s linear infinite alternate;
-	opacity: .2;
+	filter: contrast(110%);
+	animation: noiseMove 10s linear infinite alternate;
+	opacity: .14;
 }
 
 /* Glitch text */
@@ -198,6 +198,26 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: .5px; }
 		drop-shadow(0 0 9px rgba(210,115,137,0.55))
 		drop-shadow(0 0 20px rgba(153,79,97,0.35));
 	transform: translateZ(0); /* prevent blurring on some GPUs */
+}
+
+/* Header blur control */
+header.header-blur { backdrop-filter: blur(6px); }
+@media (max-width: 768px) {
+	header.header-blur { backdrop-filter: none; background: color-mix(in oklab, var(--bg) 80%, black) / 0.88; }
+}
+
+/* Reduce visual load on small screens */
+@media (max-width: 768px) {
+	.scanlines::before { opacity: .08; }
+	.noise { opacity: .1; animation-duration: 14s; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
+	.scanlines::before, .noise { opacity: 0 !important; }
+	.project-card--image-focus { opacity: 1 !important; transform: none !important; }
+	#skills .reveal { opacity: 1 !important; transform: none !important; }
 }
 
 /* Utility to set mask source (assigned inline where used) */

@@ -38,3 +38,7 @@
 @media (hover: none) {
   .mesh [data-skillbox] .skill-chip:hover { transform: none; box-shadow: none; }
 }
+
+/* Aparición suave de grupos de habilidades */
+#skills .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s cubic-bezier(.22,.61,.36,1); }
+#skills .reveal.is-visible { opacity: 1; transform: none; }

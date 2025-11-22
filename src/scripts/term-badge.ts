@@ -37,10 +37,11 @@ function initOne(root: Element) {
   let typing = true;
   let timer: number | undefined = undefined;
 
-  const typeSpeed = 55;
-  const eraseSpeed = 35;
-  const holdTime = 1000;
-  const idleTime = 450;
+  // Slower pacing
+  const typeSpeed = 95;
+  const eraseSpeed = 55;
+  const holdTime = 1400;
+  const idleTime = 800;
 
   function tick() {
     const text = `$ ${cmds[cmdIdx]}`;
